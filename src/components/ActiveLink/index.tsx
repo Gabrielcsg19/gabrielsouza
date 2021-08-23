@@ -17,6 +17,7 @@ export function ActiveLink({ children, href }: ActiveLinkProps) {
     <Link href={href} passHref>
       <ChakraLink
         px="2.5"
+        transition="border .5s"
         borderBottom={'3px solid'}
         borderColor={active ? 'red.700' : 'gray.900'}
         _hover={{ textDecoration: 'none' }}

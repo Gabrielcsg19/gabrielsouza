@@ -9,7 +9,7 @@ export function PageContent({ children }: PageContentProps) {
   return (
     <Flex
       bgImg="/images/background.svg"
-      h="calc(100vh - 93px)"
+      h="calc(100vh - 85px)"
       bgSize="cover"
       mt="2"
     >

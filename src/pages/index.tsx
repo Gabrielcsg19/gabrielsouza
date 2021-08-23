@@ -1,4 +1,12 @@
-import { Flex, Text, VStack, Button, Box, Image } from '@chakra-ui/react';
+import {
+  Flex,
+  Text,
+  VStack,
+  Button,
+  Box,
+  Image,
+  Heading,
+} from '@chakra-ui/react';
 
 import { PageContent } from '../components/PageContent';
 
@@ -21,7 +29,7 @@ export default function Home() {
               >
                 Desenvolvedor full-stack web
               </Text>
-              <Text
+              <Heading
                 as="h1"
                 fontSize={{ base: '5xl', '2xl': '7xl' }}
                 fontWeight="semibold"
@@ -30,7 +38,7 @@ export default function Home() {
                   G
                 </Text>
                 abriel Souza
-              </Text>
+              </Heading>
               <Text fontSize={{ base: 'lg', '2xl': '2xl' }}>
                 Apaixonado pelo impacto que a programação causa no mundo e
                 motivado por novos desafios.
