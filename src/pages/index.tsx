@@ -6,7 +6,7 @@ import { PageContent } from '../components/PageContent';
 export default function Home() {
   return (
     <Flex direction="column">
-      <PageContent>
+      <PageContent height="calc(100vh - 93px)">
         <Flex h="inherit" align="center" justify="space-between">
           <HomeInfo />
           <Image

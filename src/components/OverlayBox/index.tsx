@@ -10,7 +10,7 @@ export function OverlayBox({ scrollY }: OverlayBoxProps) {
       position="fixed"
       bottom={0}
       left={0}
-      height="280px"
+      height="150px"
       right={0}
       bgGradient="linear(to-b, transparent, black)"
       transition="opacity 1s"

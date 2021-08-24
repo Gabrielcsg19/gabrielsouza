@@ -1,6 +1,5 @@
 /* eslint-disable react/no-children-prop */
 import { Flex, Text, Heading } from '@chakra-ui/react';
-import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 
 import { PageContent } from '../components/PageContent';
@@ -12,6 +11,28 @@ import axios from 'axios';
 export default function Projects() {
   const [scrollY, setScrollY] = useState(0);
   const [repositories, setRepositories] = useState([]);
+
+  useEffect(() => {
+    const getRepositories = async () => {
+      const response = await axios.get(
+        `https://api.github.com/users/Gabrielcsg19/repos?access_token=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`
+      );
+
+      const formattedData = response.data.map(repository => ({
+        id: repository.id,
+        name: repository.name,
+        description: repository.description,
+        clone_url: repository.clone_url,
+        homepage: repository.homepage,
+      }));
+
+      console.log(response.data);
+
+      setRepositories(formattedData);
+    };
+
+    getRepositories();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,20 +66,8 @@ export default function Projects() {
         </Heading>
         <ProjectFilter />
 
-        <CardsGrid />
+        <CardsGrid repositories={repositories} />
       </PageContent>
     </Flex>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async context => {
-  const response = await axios.get(
-    `https://api.github.com/users/Gabrielcsg19/repos?access_token=${process.env.GITHUB_API_TOKEN}`
-  );
-
-  console.log(response.data);
-
-  return {
-    props: {},
-  };
-};

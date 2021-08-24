@@ -1,13 +1,18 @@
-import { Text, TextProps } from '@chakra-ui/react';
+// import { Text, TextProps } from '@chakra-ui/react';
 
-interface CardDescriptionProps extends TextProps {
-  children: string;
-}
+// interface CardDescriptionProps extends TextProps {
+//   description: string;
+// }
 
-export function CardDescription({ children, ...props }: CardDescriptionProps) {
-  return (
-    <Text {...props}>
-      {children.length >= 200 ? `${children.slice(0, 200)} ...` : children}
-    </Text>
-  );
-}
+// export function CardDescription({
+//   description,
+//   ...props
+// }: CardDescriptionProps) {
+//   return (
+//     <Text {...props}>
+//       {description.length >= 200
+//         ? `${description.slice(0, 200)} ...`
+//         : description}
+//     </Text>
+//   );
+// }
