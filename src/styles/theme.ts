@@ -28,7 +28,6 @@ export const theme = extendTheme({
   sizes: {
     container: {
       lg: '1100px',
-      '2xl': '1600px',
     },
   },
 });

@@ -1,5 +1,5 @@
 import { Flex, HStack, Container, Image } from '@chakra-ui/react';
-import { ActiveLink } from '../ActiveLink';
+import { ActiveLink } from './ActiveLink';
 
 export function Header() {
   return (

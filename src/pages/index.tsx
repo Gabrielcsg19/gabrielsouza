@@ -1,6 +1,6 @@
 import { Flex, Image } from '@chakra-ui/react';
 
-import { HomeInfo } from '../components/HomeInfo';
+import { HomeInfo } from '../components/Home/HomeInfo';
 import { PageContent } from '../components/PageContent';
 
 export default function Home() {

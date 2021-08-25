@@ -3,9 +3,9 @@ import { Flex, Text, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 
 import { PageContent } from '../components/PageContent';
-import { ProjectFilter } from '../components/ProjectFilter';
-import { OverlayBox } from '../components/OverlayBox';
-import { CardsGrid } from '../components/CardsGrid';
+import { ProjectFilter } from '../components/Projects/ProjectFilter';
+import { OverlayBox } from '../components/Projects/OverlayBox';
+import { CardsGrid } from '../components/Projects/CardsGrid';
 import axios from 'axios';
 
 export default function Projects() {
@@ -15,7 +15,7 @@ export default function Projects() {
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos?access_token=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`
+        `https://api.github.com/users/Gabrielcsg19/repos?access_token=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`
       );
 
       const formattedData = response.data.map(repository => ({
@@ -25,8 +25,6 @@ export default function Projects() {
         clone_url: repository.clone_url,
         homepage: repository.homepage,
       }));
-
-      console.log(response.data);
 
       setRepositories(formattedData);
     };
