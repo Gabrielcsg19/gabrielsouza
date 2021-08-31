@@ -4,12 +4,17 @@ import {
   InputLeftElement,
   Icon,
   Input,
-  Button,
   HStack,
 } from '@chakra-ui/react';
+import { ChangeEvent } from 'react';
 import { FiSearch } from 'react-icons/fi';
 
-export function ProjectFilter() {
+interface ProjectFilterProps {
+  onQuery: (query: string) => void;
+  query: string;
+}
+
+export function ProjectFilter({ onQuery, query }: ProjectFilterProps) {
   return (
     <HStack mb="5">
       <InputGroup maxW="364px" h="48px">
@@ -28,18 +33,12 @@ export function ProjectFilter() {
           borderColor="gray.700"
           borderWidth="3px"
           _hover={{ borderColor: 'gray.700' }}
+          onChange={(event: ChangeEvent<HTMLInputElement>) =>
+            onQuery(event.target.value)
+          }
+          value={query}
         />
       </InputGroup>
-      <Button
-        bg="red.700"
-        py="6"
-        px="6"
-        transition="filter 0.2s"
-        _hover={{ bg: 'red.700', filter: 'brightness(80%)' }}
-        textTransform="uppercase"
-      >
-        Filtrar
-      </Button>
     </HStack>
   );
 }

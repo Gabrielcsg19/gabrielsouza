@@ -11,11 +11,17 @@ import axios from 'axios';
 export default function Projects() {
   const [scrollY, setScrollY] = useState(0);
   const [repositories, setRepositories] = useState([]);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos?access_token=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`
+        `https://api.github.com/users/Gabrielcsg19/repos`,
+        {
+          headers: {
+            Authorization: 'token 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',
+          },
+        }
       );
 
       const formattedData = response.data.map(repository => ({
@@ -62,9 +68,9 @@ export default function Projects() {
             .
           </Text>
         </Heading>
-        <ProjectFilter />
+        <ProjectFilter onQuery={setQuery} query={query} />
 
-        <CardsGrid repositories={repositories} />
+        <CardsGrid repositories={repositories} query={query} />
       </PageContent>
     </Flex>
   );
