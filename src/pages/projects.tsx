@@ -19,7 +19,7 @@ export default function Projects() {
         `https://api.github.com/users/Gabrielcsg19/repos`,
         {
           headers: {
-            Authorization: 'token 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',
+            Authorization: 'token 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',
           },
         }
       );
@@ -27,6 +27,7 @@ export default function Projects() {
       const formattedData = response.data.map(repository => ({
         id: repository.id,
         name: repository.name,
+        cover_url: `https://raw.githubusercontent.com/Gabrielcsg19/${repository.name}/master/assets/cover-img.png`,
         description: repository.description,
         clone_url: repository.clone_url,
         homepage: repository.homepage,

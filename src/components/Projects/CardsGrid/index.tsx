@@ -17,6 +17,7 @@ import { FiLink } from 'react-icons/fi';
 type Card = {
   id: number;
   name: string;
+  cover_url: string;
   description: string;
   clone_url: string;
   homepage: string;
@@ -49,7 +50,7 @@ export function CardsGrid({ repositories, query }: CadsGridProps) {
               borderRadius="8px"
             >
               <Image
-                src="https://user-images.githubusercontent.com/54643425/129791054-260dbfe0-fccc-4cfd-b85a-74f9a33f838c.png"
+                src={repository.cover_url}
                 alt="Project print"
                 borderRadius="inherit"
                 onLoad={() => setIsLoading(false)}
