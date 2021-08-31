@@ -19,7 +19,7 @@ export default function Projects() {
         `https://api.github.com/users/Gabrielcsg19/repos`,
         {
           headers: {
-            Authorization: 'token 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',
+            Authorization: `token ${process.env.GITHUB_API_TOKEN}`,
           },
         }
       );
