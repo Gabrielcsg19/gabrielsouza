@@ -54,6 +54,8 @@ export function CardsGrid({ repositories, query }: CadsGridProps) {
                 alt="Project print"
                 borderRadius="inherit"
                 onLoad={() => setIsLoading(false)}
+                objectFit="cover"
+                objectPosition="top center"
                 h="100%"
                 w="100%"
               />

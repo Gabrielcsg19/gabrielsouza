@@ -16,10 +16,10 @@ export default function Projects() {
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos`,
+        `https://api.github.com/users/Gabrielcsg19/repos?type=forks`,
         {
           headers: {
-            Authorization: `token ${process.env.GITHUB_API_TOKEN}`,
+            Authorization: `token acess_token`,
           },
         }
       );
