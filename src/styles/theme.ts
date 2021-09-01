@@ -19,6 +19,9 @@ export const theme = extendTheme({
   },
   styles: {
     global: {
+      html: {
+        scrollbarWidth: 'thin',
+      },
       body: {
         bg: 'gray.900',
         color: 'gray.50',

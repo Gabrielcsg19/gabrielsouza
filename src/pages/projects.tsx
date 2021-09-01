@@ -16,7 +16,7 @@ export default function Projects() {
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos?type=forks`,
+        `https://api.github.com/users/Gabrielcsg19/repos`,
         {
           headers: {
             Authorization: `token acess_token`,
