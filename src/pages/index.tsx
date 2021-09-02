@@ -6,8 +6,13 @@ import { PageContent } from '../components/PageContent';
 export default function Home() {
   return (
     <Flex direction="column">
-      <PageContent height="calc(100vh - 93px)">
-        <Flex h="inherit" align="center" justify="space-between">
+      <PageContent height={['calc(100vh - 78px)', 'calc(100vh - 93px)']}>
+        <Flex
+          h="inherit"
+          align="center"
+          direction={['column', 'column', 'row']}
+          justify={['stretch', 'space-between']}
+        >
           <HomeInfo />
           <Image
             src="/images/illustration.svg"

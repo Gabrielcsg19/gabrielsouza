@@ -16,7 +16,7 @@ export default function Projects() {
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos`,
+        `https://api.github.com/users/Gabrielcsg19/repos?sort=updated&direction=desc`,
         {
           headers: {
             Authorization: `token acess_token`,
@@ -24,14 +24,20 @@ export default function Projects() {
         }
       );
 
-      const formattedData = response.data.map(repository => ({
-        id: repository.id,
-        name: repository.name,
-        cover_url: `https://raw.githubusercontent.com/Gabrielcsg19/${repository.name}/master/assets/cover-img.png`,
-        description: repository.description,
-        clone_url: repository.clone_url,
-        homepage: repository.homepage,
-      }));
+      console.log(response.data);
+
+      const formattedData = response.data
+        .filter(
+          repository => !repository.fork && repository.name !== 'Gabrielcsg19'
+        )
+        .map(repository => ({
+          id: repository.id,
+          name: repository.name,
+          cover_url: `https://raw.githubusercontent.com/Gabrielcsg19/${repository.name}/master/assets/cover-img.png`,
+          description: repository.description,
+          clone_url: repository.clone_url,
+          homepage: repository.homepage,
+        }));
 
       setRepositories(formattedData);
     };
