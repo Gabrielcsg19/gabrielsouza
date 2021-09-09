@@ -7,6 +7,7 @@ export const theme = extendTheme({
       '800': '#0F0F11',
       '700': '#4B4B51',
       '600': '#85858E',
+      '100': '#AAA',
       '50': '#F2F2F2',
     },
     red: {
@@ -21,10 +22,12 @@ export const theme = extendTheme({
     global: {
       html: {
         scrollbarWidth: 'thin',
+        height: '100vh',
       },
       body: {
-        bg: 'gray.900',
         color: 'gray.50',
+        bgImg: '/images/background.svg',
+        bgSize: 'cover',
       },
     },
   },

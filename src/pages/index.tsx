@@ -6,18 +6,24 @@ import { PageContent } from '../components/PageContent';
 export default function Home() {
   return (
     <Flex direction="column">
-      <PageContent height={['calc(100vh - 78px)', 'calc(100vh - 93px)']}>
+      <PageContent
+        height={['calc(100vh - 85px)', 'calc(100vh - 93px)']}
+        maxW="container.lg"
+      >
         <Flex
           h="inherit"
           align="center"
-          direction={['column', 'column', 'row']}
-          justify={['stretch', 'space-between']}
+          direction={{ base: 'column', md: 'row' }}
+          justify={{ base: 'stretch', md: 'space-between' }}
         >
           <HomeInfo />
           <Image
             src="/images/illustration.svg"
             alt="Illustration"
-            width={{ base: 'auto', '2xl': '750px' }}
+            order={[-1, -1, 0]}
+            maxW={['200px', '400px', 'initial']}
+            mt={['8', '6', 0]}
+            mb={['5', '4', 0]}
           />
         </Flex>
       </PageContent>

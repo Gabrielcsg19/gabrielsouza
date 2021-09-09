@@ -1,12 +1,21 @@
 /* eslint-disable react/no-children-prop */
 import { Flex, Text, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import { PageContent } from '../components/PageContent';
 import { ProjectFilter } from '../components/Projects/ProjectFilter';
 import { OverlayBox } from '../components/Projects/OverlayBox';
 import { CardsGrid } from '../components/Projects/CardsGrid';
-import axios from 'axios';
+
+type Repository = {
+  id: number;
+  fork: boolean;
+  name: string;
+  description: string;
+  clone_url: string;
+  homepage: string;
+};
 
 export default function Projects() {
   const [scrollY, setScrollY] = useState(0);
@@ -16,21 +25,15 @@ export default function Projects() {
   useEffect(() => {
     const getRepositories = async () => {
       const response = await axios.get(
-        `https://api.github.com/users/Gabrielcsg19/repos?sort=updated&direction=desc`,
-        {
-          headers: {
-            Authorization: `token acess_token`,
-          },
-        }
+        `https://api.github.com/users/Gabrielcsg19/repos?sort=updated&direction=desc`
       );
-
-      console.log(response.data);
 
       const formattedData = response.data
         .filter(
-          repository => !repository.fork && repository.name !== 'Gabrielcsg19'
+          (repository: Repository) =>
+            !repository.fork && repository.name !== 'Gabrielcsg19'
         )
-        .map(repository => ({
+        .map((repository: Repository) => ({
           id: repository.id,
           name: repository.name,
           cover_url: `https://raw.githubusercontent.com/Gabrielcsg19/${repository.name}/master/assets/cover-img.png`,
@@ -61,23 +64,23 @@ export default function Projects() {
 
   return (
     <Flex direction="column">
-      <PageContent>
-        <OverlayBox scrollY={scrollY} />
+      <PageContent maxW="container.lg">
         <Heading
           as="h1"
           textAlign="center"
-          my="8"
-          fontSize="4xl"
+          my={['6', '8']}
+          fontSize={['2xl', '4xl']}
           fontWeight="medium"
         >
           Meus projetos públicos no GitHub
-          <Text display="inline" color="red.700">
+          <Text as="span" color="red.700">
             .
           </Text>
         </Heading>
         <ProjectFilter onQuery={setQuery} query={query} />
 
         <CardsGrid repositories={repositories} query={query} />
+        <OverlayBox scrollY={scrollY} />
       </PageContent>
     </Flex>
   );

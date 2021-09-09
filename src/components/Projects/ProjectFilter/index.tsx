@@ -17,7 +17,7 @@ interface ProjectFilterProps {
 export function ProjectFilter({ onQuery, query }: ProjectFilterProps) {
   return (
     <HStack mb="5">
-      <InputGroup maxW="364px" h="48px">
+      <InputGroup maxW="430px" h="48px">
         <InputLeftElement
           h="inherit"
           ml="1"
