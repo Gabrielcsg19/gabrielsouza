@@ -24,7 +24,7 @@ export function HomeInfo() {
       </Box>
 
       <Link
-        href="https://drive.google.com/file/d/1np16ywXVboBL3dZ9elQqjsN116sPU2dl/view?usp=sharing"
+        href="https://drive.google.com/file/d/1bfnDLJwzQOZUpCS4S6qaZQFIy2M92gp5/view?usp=sharing"
         target="_blank"
         _hover={{ textDecoration: 'none' }}
         alignSelf={{ base: 'center', md: 'flex-start' }}
