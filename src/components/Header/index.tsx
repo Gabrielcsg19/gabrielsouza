@@ -2,10 +2,10 @@ import {
   Flex,
   HStack,
   Container,
-  Image,
   IconButton,
   Icon,
   useBreakpointValue,
+  Box,
 } from '@chakra-ui/react';
 import { RiMenuLine } from 'react-icons/ri';
 
@@ -20,11 +20,9 @@ export function Header() {
     <Flex as="header" h={['70px', '85px']} align="center" bg="gray.900">
       <Container maxW="container.lg">
         <Flex align="center" justify="space-between">
-          <Image
-            src="/images/logo.svg"
-            alt="Gabriel Souza's logo"
-            width={['40px', '55px']}
-          />
+          <Box w={55}>
+            <img src="/images/logo.svg" alt="Gabriel Souza's logo" />
+          </Box>
 
           {isMobileVersion ? (
             <IconButton

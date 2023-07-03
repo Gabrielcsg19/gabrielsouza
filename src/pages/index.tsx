@@ -1,4 +1,4 @@
-import { Flex, Image } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 
 import { HomeInfo } from '../components/Home/HomeInfo';
 import { PageContent } from '../components/PageContent';
@@ -17,14 +17,14 @@ export default function Home() {
           justify={{ base: 'stretch', md: 'space-between' }}
         >
           <HomeInfo />
-          <Image
-            src="/images/illustration.svg"
-            alt="Illustration"
-            order={[-1, -1, 0]}
-            maxW={['200px', '400px', 'initial']}
+          <Box
             mt={['8', '6', 0]}
             mb={['5', '4', 0]}
-          />
+            maxW={['200px', '400px', 'initial']}
+            order={[-1, -1, 0]}
+          >
+            <img src="/images/illustration.svg" alt="Illustration" />
+          </Box>
         </Flex>
       </PageContent>
     </Flex>
