@@ -24,7 +24,7 @@ export function HomeInfo() {
       </Box>
 
       <Link
-        href="https://drive.google.com/file/d/1EJB5kgjmRtSO4Qvh922_w5h4hD7E3ay_/view?usp=sharing"
+        href="https://drive.google.com/file/d/1sFeW7oVBDguh07lL6wf7iprax4SiPzh8/view?usp=sharing"
         target="_blank"
         _hover={{ textDecoration: 'none' }}
         alignSelf={{ base: 'center', md: 'flex-start' }}
@@ -41,7 +41,7 @@ export function HomeInfo() {
           transition="filter 0.2s"
           _hover={{ bg: 'transparent', filter: 'brightness(80%)' }}
         >
-          Baixar currículo
+          Acessar currículo
         </Button>
       </Link>
     </VStack>
